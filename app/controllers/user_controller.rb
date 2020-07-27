@@ -9,4 +9,9 @@ class UserController < ApplicationController
     render json: @user
   end
 
+  def set_response
+    @user = User::Operation::SetResponse.(params: {web_app: false})
+    render json: @user
+  end
+
 end
